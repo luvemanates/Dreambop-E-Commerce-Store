@@ -1,5 +1,5 @@
 development:
-  bucket_name: buymeyo_prod
+  bucket_name: dreambop
   access_key_id: FFFFFFFFFFFFFFFFFFFFF
   secret_access_key: 011111101111111111111
 

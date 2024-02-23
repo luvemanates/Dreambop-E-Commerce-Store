@@ -1,4 +1,4 @@
-class AddSpexEssential < ActiveRecord::Migration
+class AddSpexEssential < ActiveRecord::Migration[7.1]
   def self.up
     create_table "spex_essential_products", :force => true do |t|
       t.integer  :etilize_product_id, :limit => 11

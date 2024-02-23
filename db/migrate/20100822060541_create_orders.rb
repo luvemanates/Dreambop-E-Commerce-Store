@@ -1,4 +1,4 @@
-class CreateOrders < ActiveRecord::Migration
+class CreateOrders < ActiveRecord::Migration[7.1]
   def self.up
     create_table :orders do |t|
       t.integer :user_id

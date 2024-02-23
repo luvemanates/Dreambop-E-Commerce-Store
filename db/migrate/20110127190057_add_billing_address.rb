@@ -1,4 +1,4 @@
-class AddBillingAddress < ActiveRecord::Migration
+class AddBillingAddress < ActiveRecord::Migration[7.1]
   def self.up
     add_column :credit_cards, :address, :string, :default => ''
     add_column :credit_cards, :city, :string, :default => ''

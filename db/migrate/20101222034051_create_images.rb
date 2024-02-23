@@ -1,4 +1,4 @@
-class CreateImages < ActiveRecord::Migration
+class CreateImages < ActiveRecord::Migration[7.1]
   def self.up
     create_table "product_images" do |t|
       t.string  :filename

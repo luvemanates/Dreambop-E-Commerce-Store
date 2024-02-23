@@ -1,4 +1,4 @@
-class AddDefaultAddress < ActiveRecord::Migration
+class AddDefaultAddress < ActiveRecord::Migration[7.1]
   def self.up
     add_column :shipping_addresses, :current_default, :boolean, :default => false
   end

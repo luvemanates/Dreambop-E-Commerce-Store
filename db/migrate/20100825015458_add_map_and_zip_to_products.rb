@@ -1,4 +1,4 @@
-class AddMapAndZipToProducts < ActiveRecord::Migration
+class AddMapAndZipToProducts < ActiveRecord::Migration[7.1]
   def self.up
     add_column :products, :map, :float, :default => 0.0
     rename_column :products, :ds_vendor_name, :ds_vendor_type

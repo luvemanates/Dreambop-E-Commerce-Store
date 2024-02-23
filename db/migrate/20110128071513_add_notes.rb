@@ -1,4 +1,4 @@
-class AddNotes < ActiveRecord::Migration
+class AddNotes < ActiveRecord::Migration[7.1]
   def self.up
     add_column :orders, :notes, :text, :default => ''
   end

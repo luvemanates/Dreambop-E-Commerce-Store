@@ -1,4 +1,4 @@
-class AddCartSessionId < ActiveRecord::Migration
+class AddCartSessionId < ActiveRecord::Migration[7.1]
   def self.up
     add_column :carts, :session_id, :string, :default => ''
   end

@@ -1,4 +1,4 @@
-Dreambop3::Application.routes.draw do
+Rails.application.routes.draw do
   resource :cart
   resources :orders do
     collection do
@@ -11,29 +11,29 @@ Dreambop3::Application.routes.draw do
 
   resources :shipping_addresses
 
-  match '/logout', :controller => 'sessions', :action => 'destroy', :as => 'logout'
-  match '/login', :controller => 'sessions', :action => 'new', :as => 'login'
-  match '/register', :controller => 'users', :action => 'create', :as => 'register'
-  match '/signup', :controller => 'users', :action => 'new', :as => 'signup'
-  match '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil, :as => 'activate'
+  post '/logout', :controller => 'sessions', :action => 'destroy', :as => 'logout'
+  get '/login', :controller => 'sessions', :action => 'new', :as => 'login'
+  post '/register', :controller => 'users', :action => 'create', :as => 'register'
+  get '/signup', :controller => 'users', :action => 'new', :as => 'signup'
+  get '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil, :as => 'activate'
   resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
-  match '/reset_password', :controller => 'users', :action => :reset_password, :as => 'reset_password'
-  match '/change_password', :controller => 'users', :action => :change_password, :as => 'change_password'
-  match '/search/post', :controller => 'search', :action => 'post', :via => 'post', :as => 'search_post'
-  match '/search/:id', :controller => 'search', :action => 'show', :via => 'get', :as => 'search'
-  match '/categories/:id', :controller => 'categories', :action => 'index', :as => 'categories'
+  post '/reset_password', :controller => 'users', :action => :reset_password, :as => 'reset_password'
+  get '/change_password', :controller => 'users', :action => :change_password, :as => 'change_password'
+  post '/search/post', :controller => 'search', :action => 'post', :via => 'post', :as => 'search_post'
+  get '/search/:id', :controller => 'search', :action => 'show', :via => 'get', :as => 'search'
+  get '/categories/:id', :controller => 'categories', :action => 'index', :as => 'categories'
   #map.manufacturer '/manufacturers/:id', :controller => 'manufacturers', :action => 'show'
   #map.manufacturers_index '/manufacturers', :controller => 'manufacturers', :action => 'index'
-  match '/categories/sub/:id', :controller => 'categories', :action => 'sub', :as => 'categories_sub'
-  match '/new', :controller => 'products', :action => 'new', :as => 'new'
-  match '/featured', :controller => 'products', :action => 'featured', :as => 'featured'
-  match '/top_sellers', :controller => 'products', :action => 'top_sellers', :as => 'top_sellers'
-  match '/recommended', :controller => 'products', :action => 'recommended', :as => 'recommended'
+  get '/categories/sub/:id', :controller => 'categories', :action => 'sub', :as => 'categories_sub'
+  get '/new', :controller => 'products', :action => 'new', :as => 'new'
+  get '/featured', :controller => 'products', :action => 'featured', :as => 'featured'
+  get '/top_sellers', :controller => 'products', :action => 'top_sellers', :as => 'top_sellers'
+  get '/recommended', :controller => 'products', :action => 'recommended', :as => 'recommended'
 
   resource :session
   #map.resource :manufacturers
 
-  match 'products/feed.:format', :controller => 'products', :action => 'feed'
+  get 'products/feed.:format', :controller => 'products', :action => 'feed'
   resources :products
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -78,11 +78,11 @@ Dreambop3::Application.routes.draw do
   namespace :admin do
     resources :categories
     controller :categories do
-      match 'categories(/:action(/:id(.:format)))'
+      get 'categories(/:action(/:id(.:format)))'
     end
     resources :products
     controller :products do
-      match 'products(/:action(/:id(.:format)))'
+      get 'products(/:action(/:id(.:format)))'
     end
   end
 
@@ -103,5 +103,5 @@ Dreambop3::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   root :to => "products#index"
-  match ':controller(/:action(/:id(.:format)))'
+  #match ':controller(/:action(/:id(.:format)))'
 end

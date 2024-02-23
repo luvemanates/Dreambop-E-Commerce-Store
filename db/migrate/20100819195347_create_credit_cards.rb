@@ -1,4 +1,4 @@
-class CreateCreditCards < ActiveRecord::Migration
+class CreateCreditCards < ActiveRecord::Migration[7.1]
   def self.up
     create_table :credit_cards do |t|
       t.integer :user_id

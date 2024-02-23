@@ -1,4 +1,4 @@
-class CreateShippingAddresses < ActiveRecord::Migration
+class CreateShippingAddresses < ActiveRecord::Migration[7.1]
   def self.up
     create_table :shipping_addresses do |t|
       t.integer :user_id

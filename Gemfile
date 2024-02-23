@@ -1,6 +1,14 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
+ruby "3.2.2"
 
-gem 'rails', '3.2.3'
+gem 'rails', '7.1.2' #, '3.2.3'
+gem 'sprockets-rails'
+gem 'puma', '>=5.0'
+gem 'importmap-rails'
+gem 'turbo-rails'
+gem 'stimulus-rails'
+gem 'jbuilder'
+gem 'bootsnap'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,10 +18,11 @@ gem 'rails', '3.2.3'
 #gem "shipping"
 gem 'will_paginate' #, '~> 3.0.beta'
 #gem 'rmagick' #, '<= 2.9.0', :require => 'RMagick'
-gem "aws-s3", :require => "aws/s3"
+gem 'aws-sdk-rails'
+gem 'aws-sdk-s3'
 gem 'memcache-client'
 gem 'cached_model'
-gem 'active_shipping'
+#gem 'active_shipping'
 gem 'mysql2'
 #gem 'mysql'
 #gem 'passenger'

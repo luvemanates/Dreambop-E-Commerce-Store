@@ -1,4 +1,4 @@
-class CreateIngramProduct < ActiveRecord::Migration
+class CreateIngramProduct < ActiveRecord::Migration[7.1]
   def self.up
     create_table :ingram_micro_products do |t|
       t.integer :spex_essential_product_id, :null => false

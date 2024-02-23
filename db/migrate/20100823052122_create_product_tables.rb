@@ -1,8 +1,8 @@
-class CreateProductTables < ActiveRecord::Migration
+class CreateProductTables < ActiveRecord::Migration[7.1]
   def self.up
     create_table :products, :options => 'ENGINE MyISAM' do |t|
       t.column :title, :string, :default => ''
-      t.column :description, :text, :default => ''
+      t.column :description, :text
       t.column :category, :string, :default => ''
       t.column :ds_vendor_id, :integer, :default => 0
       t.column :ds_vendor_name, :string, :default => ''
@@ -24,7 +24,7 @@ class CreateProductTables < ActiveRecord::Migration
       t.column :manufacturers_name, :string, :default => ''
       t.column :dsdi_product_id, :integer, :default => 0
       t.column :dsdi_product_name, :string, :default => ''
-      t.column :dsdi_product_description, :text, :default => ''
+      t.column :dsdi_product_description, :text
       t.column :quantity, :float, :default => 0.0
       t.column :category, :string, :default => ''
       t.column :master_category, :string, :default => ''
@@ -38,7 +38,7 @@ class CreateProductTables < ActiveRecord::Migration
       t.column :weight, :float, :default => 0.0
       t.column :map, :string, :default => ''
       t.column :map_price, :string, :default => ''
-      t.column :product_specs, :text, :default => ''
+      t.column :product_specs, :text
       t.column :product_image, :string, :default => ''
       t.column :ship_eta, :string, :default => ''
       t.column :ship_exception, :string, :default => ''

@@ -1,4 +1,4 @@
-class CreateCarts < ActiveRecord::Migration
+class CreateCarts < ActiveRecord::Migration[7.1]
   def self.up
     create_table :carts do |t|
       t.integer :user_id, :null => false
